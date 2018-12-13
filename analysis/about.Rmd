@@ -1,8 +1,14 @@
 ---
-title: "About"
+title: "About Me"
 output:
   workflowr::wflow_html:
     toc: false
 ---
 
-Describe your project.
+<br>
+![Courtney Schiffman](photo.jpg) <br>
+*Biostatistician, UC Berkeley*
+
+I am a fifth year PhD candidate in biostatistics at the University of California, Berkeley (expected graduation spring 2019). I have a designated emphasis in genomic and computational biology. My career aim is to work as a biostatistician in the health industry, specifically in clinical trial and computational biology research, where I can see the direct impact of statistical work on patient health and outcomes. My background is in biomarker discovery, statistical genetics and metabolomics, and data visualization and normalization. I am currently working on developing a pre-processing and biomarker discovery pipeline for untargeted metabolomics data collected from liquid chromatography mass spectrometry. This computational and statistical pipeline has been applied to metabolomics studies related to childhood leukemia and colorectal cancer.
+
+In my personal life, you will most likely find me spending time outdoors with my dog in beautiful California. I find spending time outdoors is a great way to reduce stress, which is important during graduate school! When I am not hiking or trail running, I enjoy cooking new vegan dishes at home and spending time with friends and family.

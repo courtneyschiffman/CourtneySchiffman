@@ -3,26 +3,20 @@ title: "Publications"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+Kang, et al., “Electrophoretic cytopathology resolves ERB2 forms with single-cell”, NPJ Precision Oncology, 2018.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Perttula, et al., “Lipidomic features associated with colorectal cancer in a prospective cohort”, BMC Cancer, 2018.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Petrick, et al., “An untargeted metabolomics method for archived newborn dried blood spots in epidemiological studies”, Metabolomics, 2017.
 
-```{r cars}
-summary(cars)
-```
+Petrick, et al., “Metabolomics of Neonatal Blood Spots Reveals Lipid Associations with Pediatric Acute Lymphoblastic Leukemia,” IJE, 2018. Submitted for review.
 
-## Including Plots
+Schiffman et al., “SIDEseq: a cell similarity measure defined by shared identified differentially expressed genes for single-cell RNA-sequencing data”, Statistics in Biosciences, 2017.
 
-You can also embed plots, for example:
+Schiffman et al., “Identification of gene expression predictors of occupational benzene exposure,” PLOS ONE, 2018.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+Schiffman et al., “Data-adaptive pipeline for filtering and normalizing metabolomics data.,” bioRxiv, 2018, doi: https://doi.org/10.1101/387365.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Yano, et al., “Untargeted Adductomics of Cys34 Modification to Human Serum Albumin in Newborn Dried Blood Spots,” ABC, 2018. Submitted for review.
+

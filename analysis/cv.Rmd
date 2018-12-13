@@ -3,26 +3,63 @@ title: "CV"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+### Education
 
-## R Markdown
+* 2014-2019, PhD in Biostatistics, University of California, Berkeley
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+    + Designated emphasis in Computational and Genomic Biology
+    
+* 2009-2013, BA in Applied Mathematics, University of California, Berkeley
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Research Experience
 
-```{r cars}
-summary(cars)
-```
+University of California, Berkeley, School of Public Health
 
-## Including Plots
+* Graduate Student Researcher, NIH R33 project, Supervisors Stephen Rappaport and Sandrine Dudoit, Spring 2016-Present, Using Adductomics to Characterize Exposures to Carcinogens.
 
-You can also embed plots, for example:
+    + Development of pre-processing and statistical pipelines for the analysis of LC-MS data for adductomics and metabolomics for cancer specimens.
+  
+* Graduate Student Researcher, Superfund Core D, Supervisor Alan Hubbard, Summer 2015-Fall 2015, Exploring the genetic effects of occupational benzene exposure.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+    + Development of benzene exposure gene expression signature using machine learning
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+University of California, Berkeley, Statistics
+
+* Graduate Student Researcher, FRG Fund, Supervisor Haiyan Huang, Summer 2015, Statistical analysis of microarray data sets and single-cell RNA-Seq.
+
+    + Development of single-cell similarity measure for clustering of single-cell data, statistical analysis of single-cell protein expression.
+
+### Teaching
+
+* Graduate Student Instructor, Concepts of Probability, Spring 2015.
+* Graduate Student Instructor, Concepts of Probability, Fall 2014
+* Graduate Student Instructor, Introductory Probability and Statistics, Fall 2014.
+
+
+### Awards
+
+Outstanding Graduate Student Instructor Award (2014-2015).
+
+### Internships
+
+* Genentech Biostatistics Summer Internship 2018 Program, Advisers Nicholas Lewin-Koh and Joseph Paulson.
+
+    + statistical analysis of microbiome data and observation of all stages of drug development
+
+
+### Additional relevant activities
+
+* Expert in R programming
+
+* Experience with Python and SQL
+
+### References
+
+* Haiyan Huang, Associate Professor of Statistics, UC Berkeley, hhuang@stat.berkeley.edu.
+
+* Sandrine Dudoit, Professor of Statistics and Biostatistics, UC Berkeley, sandrine@stat.berkeley.edu.
+
+* Stephen Rappaport, Professor of Environmental Health Sciences, Director of the Berkeley Center for Exposure Biology, srappaport@berkeley.edu.
+
+* Nicholas Lewin-koh, Statistician, Genentech, lewinkoh.nicholas@gene.com.
+
