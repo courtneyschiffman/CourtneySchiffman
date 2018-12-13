@@ -3,7 +3,7 @@ output_dir: "../docs"
 navbar:
   title: "Courtney Schiffman"
   left:
-    - text: "Courtney Schiffman"
+    - text: "About me"
       href: about.html
     - text: "Publications"
       href: publications.html
