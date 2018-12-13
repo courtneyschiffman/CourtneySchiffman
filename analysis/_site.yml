@@ -1,14 +1,14 @@
 name: "CourtneySchiffman"
 output_dir: "../docs"
 navbar:
-  title: "CourtneySchiffman"
+  title: "Courtney Schiffman"
   left:
-    - text: "Home"
-      href: index.html
-    - text: "About"
+    - text: "Courtney Schiffman"
       href: about.html
-    - text: "License"
-      href: license.html
+    - text: "Publications"
+      href: publications.html
+    - text: "CV"
+      href: cv.html
   right:
     - icon: fa-github
       href: https://github.com/jdblischak/workflowr
@@ -16,5 +16,5 @@ output:
   workflowr::wflow_html:
     toc: true
     toc_float: true
-    theme: cosmo
+    theme: simplex
     highlight: textmate
