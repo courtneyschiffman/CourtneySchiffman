@@ -10,7 +10,7 @@ Perttula, et al., “Lipidomic features associated with colorectal cancer in a p
 
 Petrick, et al., “An untargeted metabolomics method for archived newborn dried blood spots in epidemiological studies”, Metabolomics, 2017.
 
-Petrick, et al., “Metabolomics of Neonatal Blood Spots Reveals Lipid Associations with Pediatric Acute Lymphoblastic Leukemia,” IJE, 2018. Submitted for review.
+Petrick, et al., “Metabolomics of Neonatal Blood Spots Reveals Lipid Associations with Pediatric Acute Lymphoblastic Leukemia,” Cancer Letters, 2019. Under review.
 
 Schiffman et al., “SIDEseq: a cell similarity measure defined by shared identified differentially expressed genes for single-cell RNA-sequencing data”, Statistics in Biosciences, 2017.
 
@@ -18,5 +18,5 @@ Schiffman et al., “Identification of gene expression predictors of occupationa
 
 Schiffman et al., “Data-adaptive pipeline for filtering and normalizing metabolomics data.,” bioRxiv, 2018, doi: https://doi.org/10.1101/387365.
 
-Yano, et al., “Untargeted Adductomics of Cys34 Modification to Human Serum Albumin in Newborn Dried Blood Spots,” ABC, 2018. Submitted for review.
+Yano, et al., “Untargeted Adductomics of Cys34 Modification to Human Serum Albumin in Newborn Dried Blood Spots,” ABC, 2019.
 
