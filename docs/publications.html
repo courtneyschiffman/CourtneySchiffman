@@ -25,9 +25,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -102,6 +101,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -116,7 +118,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -136,6 +137,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -157,18 +195,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -319,17 +416,65 @@ div.section {
 </div>
 
 
-<p><strong>Last updated:</strong> 2019-02-11</p>
-<strong>workflowr checks:</strong> <small>(Click a bullet for more information)</small>
-<ul>
-<li>
-<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>R Markdown file:</strong> up-to-date </summary></p>
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
-</details>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>Repository version:</strong> <a href="https://github.com/courtneyschiffman/CourtneySchiffman/tree/5e22c9b2ff3a7299dc5b28b10b769f6cd0c33a4c" target="_blank">5e22c9b</a> </summary></p>
+<a data-toggle="tab" href="#report"> Report <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2019-05-14
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>CourtneySchiffman/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.2.0). The <em>Report</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="report" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcourtneyschiffmanCourtneySchiffmantreee47c4d8abebd0214d18deb2ca52fca5830e429fftargetblanke47c4d8a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/courtneyschiffman/CourtneySchiffman/tree/e47c4d8abebd0214d18deb2ca52fca5830e429ff" target="_blank">e47c4d8</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcourtneyschiffmanCourtneySchiffmantreee47c4d8abebd0214d18deb2ca52fca5830e429fftargetblanke47c4d8a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
 <pre><code>
 Ignored files:
     Ignored:    .DS_Store
@@ -339,164 +484,211 @@ Unstaged changes:
     Modified:   analysis/_site.yml
 
 </code></pre>
-Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes. </details>
-</li>
-</ul>
-<details> <summary> <small><strong>Expand here to see past versions:</strong></small> </summary>
-<ul>
-<table style="border-collapse:separate; border-spacing:5px;">
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the R Markdown and HTML files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view them.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th>
 File
 </th>
-<th style="text-align:left;">
+<th>
 Version
 </th>
-<th style="text-align:left;">
+<th>
 Author
 </th>
-<th style="text-align:left;">
+<th>
 Date
 </th>
-<th style="text-align:left;">
+<th>
 Message
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-html
-</td>
-<td style="text-align:left;">
-<a href="https://cdn.rawgit.com/courtneyschiffman/CourtneySchiffman/7af222fa982cd2002ec1a8bd8fc65e4a0d9507ef/docs/publications.html" target="_blank">7af222f</a>
-</td>
-<td style="text-align:left;">
-courtneyschiffman
-</td>
-<td style="text-align:left;">
-2019-02-05
-</td>
-<td style="text-align:left;">
-Build site.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
+<td>
 Rmd
 </td>
-<td style="text-align:left;">
-<a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/c77dbd3545008d531adefd64e1ea9921da693b66/analysis/publications.Rmd" target="_blank">c77dbd3</a>
+<td>
+<a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/e47c4d8abebd0214d18deb2ca52fca5830e429ff/analysis/publications.Rmd" target="_blank">e47c4d8</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
-2019-02-05
+<td>
+2019-05-14
 </td>
-<td style="text-align:left;">
+<td>
 wflow_publish(“analysis/publications.Rmd”)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td>
 html
 </td>
-<td style="text-align:left;">
-<a href="https://cdn.rawgit.com/courtneyschiffman/CourtneySchiffman/b4202aa572820ae74c5c0e492e52cf6976e84063/docs/publications.html" target="_blank">b4202aa</a>
+<td>
+<a href="https://rawcdn.githack.com/courtneyschiffman/CourtneySchiffman/75b6df9e56693845cbb0450cf57da2d9343a042c/docs/publications.html" target="_blank">75b6df9</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
-2018-12-13
+<td>
+2019-02-11
 </td>
-<td style="text-align:left;">
+<td>
 Build site.
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-Rmd
+<td>
+html
 </td>
-<td style="text-align:left;">
-<a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/d9439d598118e791891353eca7eed1a10eaf0824/analysis/publications.Rmd" target="_blank">d9439d5</a>
+<td>
+<a href="https://rawcdn.githack.com/courtneyschiffman/CourtneySchiffman/7af222fa982cd2002ec1a8bd8fc65e4a0d9507ef/docs/publications.html" target="_blank">7af222f</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
+<td>
+2019-02-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/c77dbd3545008d531adefd64e1ea9921da693b66/analysis/publications.Rmd" target="_blank">c77dbd3</a>
+</td>
+<td>
+courtneyschiffman
+</td>
+<td>
+2019-02-05
+</td>
+<td>
+wflow_publish(“analysis/publications.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/courtneyschiffman/CourtneySchiffman/b4202aa572820ae74c5c0e492e52cf6976e84063/docs/publications.html" target="_blank">b4202aa</a>
+</td>
+<td>
+courtneyschiffman
+</td>
+<td>
 2018-12-13
 </td>
-<td style="text-align:left;">
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/d9439d598118e791891353eca7eed1a10eaf0824/analysis/publications.Rmd" target="_blank">d9439d5</a>
+</td>
+<td>
+courtneyschiffman
+</td>
+<td>
+2018-12-13
+</td>
+<td>
 wflow_publish(c(“analysis/about.Rmd”, “analysis/publications.Rmd”,
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td>
 html
 </td>
-<td style="text-align:left;">
-<a href="https://cdn.rawgit.com/courtneyschiffman/CourtneySchiffman/d0ccc3cb723ed22da7a7f4d9c737ced61aecebef/docs/publications.html" target="_blank">d0ccc3c</a>
+<td>
+<a href="https://rawcdn.githack.com/courtneyschiffman/CourtneySchiffman/d0ccc3cb723ed22da7a7f4d9c737ced61aecebef/docs/publications.html" target="_blank">d0ccc3c</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
+<td>
 2018-12-13
 </td>
-<td style="text-align:left;">
+<td>
 Build site.
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td>
 html
 </td>
-<td style="text-align:left;">
-<a href="https://cdn.rawgit.com/courtneyschiffman/CourtneySchiffman/b4fb801683308517e5a39bfe05232f787fc51f84/docs/publications.html" target="_blank">b4fb801</a>
+<td>
+<a href="https://rawcdn.githack.com/courtneyschiffman/CourtneySchiffman/b4fb801683308517e5a39bfe05232f787fc51f84/docs/publications.html" target="_blank">b4fb801</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
+<td>
 2018-12-13
 </td>
-<td style="text-align:left;">
+<td>
 Build site.
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td>
 Rmd
 </td>
-<td style="text-align:left;">
+<td>
 <a href="https://github.com/courtneyschiffman/CourtneySchiffman/blob/88860309c1fe9a0f7293a1c5de7455c51e137e7d/analysis/publications.Rmd" target="_blank">8886030</a>
 </td>
-<td style="text-align:left;">
+<td>
 courtneyschiffman
 </td>
-<td style="text-align:left;">
+<td>
 2018-12-13
 </td>
-<td style="text-align:left;">
+<td>
 wflow_publish(c(“analysis/cv.Rmd”, “analysis/”))
 </td>
 </tr>
 </tbody>
 </table>
-</ul>
-<p></details></p>
-<hr />
+</div>
+<hr>
+</div>
+</div>
+</div>
 <p>Kang, et al., “Electrophoretic cytopathology resolves ERB2 forms with single-cell”, NPJ Precision Oncology, 2018.</p>
 <p>Perttula, et al., “Lipidomic features associated with colorectal cancer in a prospective cohort”, BMC Cancer, 2018.</p>
 <p>Petrick, et al., “An untargeted metabolomics method for archived newborn dried blood spots in epidemiological studies”, Metabolomics, 2017.</p>
 <p>Petrick, et al., “Metabolomics of Neonatal Blood Spots Reveals Lipid Associations with Pediatric Acute Lymphoblastic Leukemia,” Cancer Letters, 2019. Under review.</p>
 <p>Schiffman et al., “SIDEseq: a cell similarity measure defined by shared identified differentially expressed genes for single-cell RNA-sequencing data”, Statistics in Biosciences, 2017.</p>
 <p>Schiffman et al., “Identification of gene expression predictors of occupational benzene exposure,” PLOS ONE, 2018.</p>
-<p>Schiffman et al., “Data-adaptive filtering of untargeted LC-MS metabolomics data.,” BMC Bioinformatics, 2019. under review.</p>
+<p>Schiffman et al., “Data-adaptive filtering of untargeted LC-MS metabolomics data.,” BMC Bioinformatics, 2019.</p>
 <p>Yano, et al., “Untargeted Adductomics of Cys34 Modification to Human Serum Albumin in Newborn Dried Blood Spots,” ABC, 2019.</p>
+
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
 TeX fonts only; see
@@ -509,14 +701,6 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
-
-<hr>
-<p>
-  This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-  analysis was created with
-  <a href="https://github.com/jdblischak/workflowr">workflowr</a> 1.1.1
-</p>
-<hr>
 
 
 </div>
