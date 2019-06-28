@@ -18,7 +18,7 @@ Schiffman et al., “SIDEseq: a cell similarity measure defined by shared identi
 
 Schiffman et al., “Identification of gene expression predictors of occupational benzene exposure,” PLOS ONE, 2018.
 
-Schiffman et al., “Data-adaptive filtering of untargeted LC-MS metabolomics data.,” BMC Bioinformatics, 2019.
+Schiffman et al., “Filtering procedures for untargeted LC-MS metabolomics data.,” BMC Bioinformatics, 2019.
 
 Yano, et al., “Untargeted Adductomics of Cys34 Modification to Human Serum Albumin in Newborn Dried Blood Spots,” ABC, 2019.
 
